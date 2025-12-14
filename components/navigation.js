@@ -1,6 +1,6 @@
 import React from 'react'
 
-import NavButton from './nav-button'
+import NavigationButton from './navigation-button'
 import {
   Twitter,
   Home,
@@ -18,49 +18,49 @@ import styles from './navigation.module.css'
 function Navigation() {
   return (
     <nav className={styles.nav}>
-      <NavButton>
+      <NavigationButton>
         <Twitter />
-      </NavButton>
+      </NavigationButton>
 
-      <NavButton>
+      <NavigationButton>
         <Home />
         <span>Home</span>
-      </NavButton>
+      </NavigationButton>
 
-      <NavButton>
+      <NavigationButton>
         <Explore />
         <span>Explore</span>
-      </NavButton>
+      </NavigationButton>
 
-      <NavButton>
+      <NavigationButton>
         <Notification />
         <span>Notification</span>
-      </NavButton>
+      </NavigationButton>
 
-      <NavButton>
+      <NavigationButton>
         <Messages />
         <span>Messages</span>
-      </NavButton>
+      </NavigationButton>
 
-      <NavButton>
+      <NavigationButton>
         <Bookmark />
         <span>Bookmark</span>
-      </NavButton>
+      </NavigationButton>
 
-      <NavButton>
+      <NavigationButton>
         <Lists />
         <span>Lists</span>
-      </NavButton>
+      </NavigationButton>
 
-      <NavButton>
+      <NavigationButton>
         <Profile />
         <span>Profile</span>
-      </NavButton>
+      </NavigationButton>
 
-      <NavButton>
+      <NavigationButton>
         <More />
         <span>More</span>
-      </NavButton>
+      </NavigationButton>
     </nav>
   )
 }

@@ -14,6 +14,7 @@ import {
 } from './icons'
 
 import styles from './navigation.module.css'
+import TitleBold from './title-bold'
 
 function Navigation() {
   return (
@@ -24,42 +25,42 @@ function Navigation() {
 
       <NavigationButton>
         <Home />
-        <span>Home</span>
+        <TitleBold>Home</TitleBold>
       </NavigationButton>
 
       <NavigationButton>
         <Explore />
-        <span>Explore</span>
+        <TitleBold>Explore</TitleBold>
       </NavigationButton>
 
       <NavigationButton>
         <Notification />
-        <span>Notification</span>
+        <TitleBold>Notification</TitleBold>
       </NavigationButton>
 
       <NavigationButton>
         <Messages />
-        <span>Messages</span>
+        <TitleBold>Messages</TitleBold>
       </NavigationButton>
 
       <NavigationButton>
         <Bookmark />
-        <span>Bookmark</span>
+        <TitleBold>Bookmark</TitleBold>
       </NavigationButton>
 
       <NavigationButton>
         <Lists />
-        <span>Lists</span>
+        <TitleBold>Lists</TitleBold>
       </NavigationButton>
 
       <NavigationButton>
         <Profile />
-        <span>Profile</span>
+        <TitleBold>Profile</TitleBold>
       </NavigationButton>
 
       <NavigationButton>
         <More />
-        <span>More</span>
+        <TitleBold>More</TitleBold>
       </NavigationButton>
     </nav>
   )

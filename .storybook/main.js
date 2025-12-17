@@ -1,3 +1,8 @@
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 /** @type { import('@storybook/nextjs-vite').StorybookConfig } */
 const config = {
   stories: [
@@ -11,6 +16,6 @@ const config = {
     '@storybook/addon-docs'
   ],
   framework: '@storybook/nextjs-vite',
-  staticDirs: ['../public']
+  staticDirs: [join(__dirname, '../public')] // Dinamik ve hatasız yol
 }
 export default config

@@ -10,7 +10,7 @@ const config = {
     '@storybook/addon-a11y',
     '@storybook/addon-docs'
   ],
-  framework: '@storybook/nextjs-vite'
-  // staticDirs satırını tamamen sildik veya yorum satırı yaptık
+  framework: '@storybook/nextjs-vite',
+  staticDirs: ['..\\public']
 }
 export default config

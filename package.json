@@ -12,6 +12,8 @@
     "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
   },
   "dependencies": {
+    "classnames": "^2.5.1",
+    "i": "^0.3.7",
     "next": "16.0.8",
     "react": "19.2.1",
     "react-dom": "19.2.1"

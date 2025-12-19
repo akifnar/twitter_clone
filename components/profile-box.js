@@ -4,12 +4,20 @@ import cn from 'classnames'
 import styles from './profile-box.module.css'
 
 import Photo from './photo'
+import { ArrowBottom } from './icons'
+import Button from './button'
+import TextBody from './text-body'
 
-function ProfileBox() {
+function ProfileBox({ name = 'Akif Nar', slug = 'akifnar' }) {
   return (
-    <div className={cn([styles.box])}>
+    <Button className={cn([styles.box])}>
       <Photo />
-    </div>
+      <div className={styles.body}>
+        <TextBody bold>{name}</TextBody>
+        <TextBody className={styles.slug}>@{slug}</TextBody>
+      </div>
+      <ArrowBottom className={styles.icon} />
+    </Button>
   )
 }
 

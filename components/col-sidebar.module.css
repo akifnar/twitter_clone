@@ -6,8 +6,21 @@
     align-items: center;
 
     @media  (min-width: 980px) {
-        padding-left: 0;
+    align-items: flex-start;
     }
 
+}
+
+.tweet {
+    margin-top: 16px;
+    margin-bottom: 20px;
+
+    @media (min-width: 1270px){
+        width: 100%;
+    }
+}
+
+.profile {
+    margin-top: auto;
 }
 

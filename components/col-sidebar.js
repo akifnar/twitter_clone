@@ -10,10 +10,10 @@ function Sidebar({ flat }) {
   return (
     <div className={cn([styles.sidebar])}>
       <Navigation flat={flat} />
-      <ThemeButton big full>
-        Tweet
+      <ThemeButton big full={!flat}>
+        {flat ? 'a' : 'Tweet'}
       </ThemeButton>
-      <ProfileBox />
+      <ProfileBox flat={flat} />
     </div>
   )
 }

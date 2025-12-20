@@ -9,7 +9,14 @@ import ThemeButton from '@/components/theme-button'
 import Stack from '@/components/stack'
 
 export default {
-  title: 'Buttons'
+  title: 'Buttons',
+  component: Navigation, // Kontrol panelinin hangi bileşeni baz alacağını seçiyoruz
+  argTypes: {
+    flat: {
+      control: 'boolean',
+      name: 'Flat'
+    }
+  }
 }
 
 export const Normal = () => <Button>Save</Button>
@@ -24,11 +31,19 @@ export const Theme = () => (
   </Stack>
 )
 
-export const NavButton = () => (
-  <NavigationButton>
+// NavButton hikayesi: args parametresini ekledik
+export const NavButton = (args) => (
+  <NavigationButton {...args}>
     <Home />
     <TextTitle>Home</TextTitle>
   </NavigationButton>
 )
+NavButton.args = {
+  flat: false
+}
 
-export const Nav = () => <Navigation selectedKey="home" />
+// Nav hikayesi: Artık paneldeki 'flat' düğmesine tepki verir
+export const Nav = (args) => <Navigation selectedKey="home" {...args} />
+Nav.args = {
+  flat: false
+}

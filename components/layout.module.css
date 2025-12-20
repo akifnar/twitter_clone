@@ -1,13 +1,15 @@
 .layout {
     display: grid;
-    grid-template-columns: 230px 1fr; /* Mobilde 2 kolon */
-    background-color: #333;
+    grid-template-columns: auto 1fr;
     min-height: 100vh;
-
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
 
 @media (min-width: 980px) {
-    grid-template-columns: 230px 1fr 230px; /* 980px+ 3 kolon */
-}
+    max-width: 1270px;
+    grid-template-columns: auto 1fr 300px;
+    }
 }
 
 

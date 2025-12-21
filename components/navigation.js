@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { MENU } from '@/constants'
 import styles from './navigation.module.css'
 

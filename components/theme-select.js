@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import styles from './theme-select.module.css'
 
@@ -10,15 +10,15 @@ const THEME = {
 }
 
 function ThemeSelect() {
-  const [selectedTheme, selectedThemeSet] = useState('light')
-  const [mounted, setMounted] = useState(false)
+  const [selectedTheme, selectedThemeSet] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const StoredTheme = localStorage.getItem('theme')
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+      return StoredTheme || 'light'
+    }
 
-  if (!mounted) return null
-
+    return 'light'
+  })
   return (
     <div className={styles.container}>
       {['light', 'dim', 'dark'].map((theme) => (
@@ -26,9 +26,15 @@ function ThemeSelect() {
           <input
             type="radio"
             value={theme}
-            name="theme" // ÖNEMLİ: Hepsi aynı isimde olmalı ki sadece biri seçilebilsin
+            name="theme"
             checked={theme === selectedTheme}
-            onChange={() => selectedThemeSet(theme)} // Hatayı çözen kısım
+            onChange={(e) => {
+              const NewTheme = e.target.value
+              selectedThemeSet(NewTheme)
+              localStorage.setItem('theme', NewTheme)
+              document.documentElement.className =
+                NewTheme === 'light' ? '' : NewTheme
+            }}
           />
           {THEME[theme]}
         </label>

@@ -1,9 +1,10 @@
 :root {
     --c-primary: #FFFFFF;
+    --c-primary-twitter: #1DA1F2FF;
     --c-theme: rgb(29, 161, 242);
     --c-theme-10: rgba(29, 161, 242, 0.1);
     --c-text-color: #0F1419;
-    --c-border-color: #EFF3F4;
+    --c-border-color: rgb(230,236,240);
     --c-gray: #536471;
     --c-dark-gray: #F7F9F9;
     --fade: 120ms;
@@ -11,6 +12,7 @@
 
 html.dim {
     --c-primary: #15202B;
+    --c-primary-twitter: #15202B;
     --c-theme: rgb(29, 161, 242);
     --c-theme-10: rgba(29, 161, 242, 0.1);
     --c-text-color: #F7F9F9;
@@ -21,6 +23,7 @@ html.dim {
 
 html.dark {
     --c-primary: #000000;
+    --c-primary-twitter: #000000;
     --c-theme: rgb(29, 161, 242);
     --c-theme-10: rgba(29, 161, 242, 0.1);
     --c-text-color: #D6D9DB;

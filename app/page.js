@@ -1,29 +1,34 @@
 'use client'
 import React from 'react'
+import useSWR from 'swr'
 
 import './globals.css'
 import Layout from '../components/layout'
+import fetcher from '@/lib/fecth'
 import Tweet from '../components/tweet'
 
 function HomePage() {
+  const { data, error } = useSWR('/api/tweet', fetcher)
+
+  if (!data) return <p>Loading...</p>
+
+  const userInfo = data?.user || {}
+  const tweetList = data?.data || []
+
   return (
     <Layout>
-      <Tweet
-        name="Akif Nar"
-        slug="akifnar"
-        datetime={new Date('2025-12-23 19:20')}
-        text={`Hesabımın ele geçirildiğini düşünen insanlar var
-aslında ele değil ayağa geçirildi`}
-      />
-      <Tweet
-        name="Akif Nar"
-        slug="akifnar"
-        datetime={new Date('2025-12-23 19:20')}
-        text={`postcss özelinde video çektim ama içinde yok yok :))
-
-
-babel, ast, sass, ...`}
-      />
+      {tweetList.map((tweet) => {
+        return (
+          <Tweet
+            key={tweet.id}
+            {...tweet} // id, text, created_at verilerini gönderir
+            // ÇÖZÜM BURADA: public_metrics içindeki like_count, reply_count vb. dışarı çıkarıp gönderiyoruz
+            {...tweet.public_metrics}
+            name={userInfo.name}
+            slug={userInfo.username}
+          />
+        )
+      })}
     </Layout>
   )
 }

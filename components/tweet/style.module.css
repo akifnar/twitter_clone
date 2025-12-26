@@ -4,7 +4,7 @@
     grid-template-columns:  50px 1fr ;
     grid-gap: 15px;
     padding: 12px 15px;
-    border: 1px solid var(--c-border-color);
+    border-bottom: 1px solid var(--c-border-color);
 }
 
 .avatar {
